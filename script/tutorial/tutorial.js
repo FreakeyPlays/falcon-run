@@ -3,11 +3,11 @@ import { createFalconObject } from "../objects/objects.js";
 import { setTutorialInteractionState } from "./tutorial.interactions.js";
 
 let tutorialShips = [];
-let ctxObj;
+let context;
 let tutorialState;
 
 export function startTutorial(contextObject){
-    let context = contextObject.context;
+    context = contextObject.context;
     tutorialShips.push(createFalconObject(contextObject, 10, true));
 
     tutorialShips[0].move(context.canvas.width/2, context.canvas.height/2);
@@ -77,26 +77,26 @@ export function finishTutorial(move = false, shoot = false, shield = false){
         tutorialState = "move";
     }
 
-    tutorialShips[0].move(ctxObj.canvas.width/2, ctxObj.canvas.height/2);
+    tutorialShips[0].move(context.canvas.width/2, context.canvas.height/2);
     tutorialShips[0].objInfo.dx = 0;
     tutorialShips[0].objInfo.dy = 1;
     tutorialShips[0].rotate(0);
 }
 
 function drawText(tutText){
-    ctxObj.save();
-    ctxObj.fillStyle = "#FFE81F";
-    ctxObj.textAlign = "center";
+    context.save();
+    context.fillStyle = "#FFE81F";
+    context.textAlign = "center";
     let fontSize = (window.innerWidth/1080) * 20;
     fontSize < 15 ? fontSize = 15 : fontSize = fontSize;
     let text = tutText.split("\n");
-    let x = ctxObj.canvas.width/2;
-    let y = (ctxObj.canvas.height/4)*3
-    ctxObj.font =  fontSize + "px DistantGalaxy";
+    let x = context.canvas.width/2;
+    let y = (context.canvas.height/4)*3
+    context.font =  fontSize + "px DistantGalaxy";
     for(let i = 0; i < text.length; i++){
-        ctxObj.fillText(text[i], x, y + (i * fontSize));
+        context.fillText(text[i], x, y + (i * fontSize));
     }
-    ctxObj.restore();
+    context.restore();
 }
 
 export function getTutShips(){
