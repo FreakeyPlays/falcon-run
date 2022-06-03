@@ -9,7 +9,7 @@ export function switchIsMusicEnabled(){
     }
 }
 
-const shotSound = new Audio("../../sounds/shot.mp3");
+const shotSound = new Audio(window.location.href + "/sounds/shot.mp3");
 shotSound.volume = 0.3;
 export function playShotSound(){
     shotSound.currentTime = 0;
@@ -18,7 +18,7 @@ export function playShotSound(){
     }
 }
 
-const explodeSound = new Audio("../../sounds/explode.wav");
+const explodeSound = new Audio(window.location.href + "/sounds/explode.wav");
 explodeSound.volume = 0.3;
 export function playExplodeSound(){
     explodeSound.currentTime = 0;
@@ -27,7 +27,7 @@ export function playExplodeSound(){
     }
 }
 
-const flySound = new Audio("../../sounds/fly.mp3");
+const flySound = new Audio(window.location.href + "/sounds/fly.mp3");
 flySound.volume = 0;
 
 export function startFlySound(){
@@ -49,7 +49,7 @@ flySound.addEventListener("ended", () => {
     flySound.play();
 }, false);
 
-const backgroundSound = new Audio("../../sounds/background.mp3");
+const backgroundSound = new Audio(window.location.href + "/sounds/background.mp3");
 export function playBackgoundSound(){
     if(isMusicEnabled){
         backgroundSound.volume = 0.2;
@@ -67,21 +67,21 @@ backgroundSound.addEventListener("ended", () => {
     backgroundSound.play();
 }, false);
 
-const activateShieldSound = new Audio("../../sounds/activateShield.wav");
+const activateShieldSound = new Audio(window.location.href + "/sounds/activateShield.wav");
 export function playActivateShieldSound(){
     if(isMusicEnabled){
         activateShieldSound.play(); 
     }
 }
 
-const deactivateShieldSound = new Audio("../../sounds/deactivateShield.wav");
+const deactivateShieldSound = new Audio(window.location.href + "/sounds/deactivateShield.wav");
 export function playDeactivateShieldSound(){
     if(isMusicEnabled){
         deactivateShieldSound.play();
     }
 }
 
-const clickSound = new Audio("../../sounds/click.mp3");
+const clickSound = new Audio(window.location.href + "/sounds/click.mp3");
 clickSound.volume = 0.7;
 export function playClickSound(){
     clickSound.play();
